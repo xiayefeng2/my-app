@@ -1,7 +1,18 @@
+import React, {
+  useEffect
+} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import store from '@/store'
+import MyBlock from './main/RollBlock';
 
 function App() {
+  console.log('aaa')
+  useEffect(() => {
+    store.subscribe(() => {
+      console.log(store.getState())
+    })
+  }, [])
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +28,7 @@ function App() {
         >
           Learn React
         </a>
+        <MyBlock />
       </header>
     </div>
   );

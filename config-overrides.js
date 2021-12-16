@@ -16,7 +16,7 @@ module.exports = override(
     disableEsLint(),
   
     addWebpackResolve({
-      extensions: ['.js', '.jsx', '.json']
+      extensions: ['.js', '.jsx', '.json', '.css', '.scss', '.less']
     }),
   
     // add webpack bundle visualizer if BUNDLE_VISUALIZE flag is enabled
