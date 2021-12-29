@@ -25,8 +25,17 @@ const counterSlice = createSlice({
 export const { incremented, decremented, incrementByAmount } = counterSlice.actions
 
 const store = configureStore({
-  reducer: counterSlice.reducer
+  reducer: {
+    counter: counterSlice.reducer
+  }
 })
+
+
+export const incrementAsync = amount => dispatch => {
+  setTimeout(() => {
+    dispatch(incrementByAmount(amount));
+  }, 1000);
+}
 
 export const selectCount = state => state.counter.value;
 
